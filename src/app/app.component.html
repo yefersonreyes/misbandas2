@@ -1,0 +1,17 @@
+<h1>{{titulo}}</h1>
+<h2>Informacion de {{banda.nombre}}</h2>
+
+<div>
+  <label>
+    nombre:
+  </label>
+  <input [(ngModel)]="banda.nombre" placeholder="nombre de la cancion">
+  <ul class="banda">
+    <li 
+    [class.selected] = "bandaItem === banda"
+      *ngFor="let bandaItem of banda" 
+      (click) = "seleccionar (bandaItem)">
+      <span class="insignia">{{bandaItem.id}}</span> {{bandaItem.nombre}}
+    </li>
+  </ul>
+</div>
